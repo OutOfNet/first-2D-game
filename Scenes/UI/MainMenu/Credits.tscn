@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpfiqx8b2mbx7"]
+
+[ext_resource type="Script" path="res://Scripts/UI/MainMenu/CreditsExit.gd" id="1_kpjf4"]
+[ext_resource type="FontFile" uid="uid://cxhm1llmyok6f" path="res://Fonts/m5x7.ttf" id="1_x3wcg"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kpjf4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 323)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 396.0
+offset_top = 50.0
+offset_right = 1546.0
+offset_bottom = 997.0
+theme_override_fonts/font = ExtResource("1_x3wcg")
+theme_override_font_sizes/font_size = 58
+text = "Sprites : 
+
+Knight, terrain and collectibles :
+- Brackeys (on itch.io and youtube)
+
+Checkpoint Icon :
+- Omniclause (on itch.io)
+
+Controls Guide Icons :
+- greatdocbrown (on itch.io)
+
+Stamina bar, level background and main menu buttons :
+- OutOfNet
+
+Development :
+- OutOfNet (and with no tutorials!)
+
+Game Engine :
+Godot 4.3 (stable)"
+horizontal_alignment = 1

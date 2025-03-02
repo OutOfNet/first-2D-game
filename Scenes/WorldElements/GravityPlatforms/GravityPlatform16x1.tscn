@@ -1,0 +1,244 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvrxwsna6g7bo"]
+
+[ext_resource type="Script" path="res://Scripts/WorldElements/GravityPlatform/GravityPlatform.gd" id="1_fpqub"]
+[ext_resource type="Texture2D" uid="uid://bw6secaj7mwl" path="res://Sprites/Terrain/GripWallDisabled.png" id="2_t8sqh"]
+[ext_resource type="Texture2D" uid="uid://c7onm24xhsymm" path="res://Sprites/Terrain/world_tileset.png" id="3_wd2cd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emhb1"]
+size = Vector2(15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adlij"]
+atlas = ExtResource("2_t8sqh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8irkc"]
+atlas = ExtResource("3_wd2cd")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_85da2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adlij")
+}],
+"loop": false,
+"name": &"GripWallDisabled",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8irkc")
+}],
+"loop": false,
+"name": &"GripWallEnabled",
+"speed": 1.0
+}]
+
+[node name="GravityPlatform 4x1" type="Node2D"]
+
+[node name="HitBox" type="StaticBody2D" parent="."]
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox2" type="StaticBody2D" parent="."]
+position = Vector2(48, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox2"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox2/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox3" type="StaticBody2D" parent="."]
+position = Vector2(96, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox3"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox3/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox4" type="StaticBody2D" parent="."]
+position = Vector2(144, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox4"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox4/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox5" type="StaticBody2D" parent="."]
+position = Vector2(192, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox5"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox5/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox6" type="StaticBody2D" parent="."]
+position = Vector2(240, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox6"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox6/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox7" type="StaticBody2D" parent="."]
+position = Vector2(288, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox7"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox7/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox8" type="StaticBody2D" parent="."]
+position = Vector2(336, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox8"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox8/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox9" type="StaticBody2D" parent="."]
+position = Vector2(384, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox9"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox9/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox10" type="StaticBody2D" parent="."]
+position = Vector2(432, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox10"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox10/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox11" type="StaticBody2D" parent="."]
+position = Vector2(480, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox11"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox11/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox12" type="StaticBody2D" parent="."]
+position = Vector2(528, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox12"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox12/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox13" type="StaticBody2D" parent="."]
+position = Vector2(576, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox13"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox13/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox14" type="StaticBody2D" parent="."]
+position = Vector2(624, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox14"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox14/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox15" type="StaticBody2D" parent="."]
+position = Vector2(672, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox15"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox15/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"
+
+[node name="HitBox16" type="StaticBody2D" parent="."]
+position = Vector2(720, 0)
+script = ExtResource("1_fpqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox16"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_emhb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox16/CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_85da2")
+animation = &"GripWallEnabled"
+autoplay = "GripWallDisabled"

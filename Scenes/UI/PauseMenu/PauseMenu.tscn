@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://1p4o1hrmwkwm"]
+
+[ext_resource type="FontFile" uid="uid://cxhm1llmyok6f" path="res://Fonts/m5x7.ttf" id="1_g26ut"]
+[ext_resource type="Texture2D" uid="uid://dphrtr533m2r8" path="res://Sprites/UI/MainMenu/MenuButton.png" id="2_cetir"]
+[ext_resource type="Script" path="res://Scripts/WorldElements/LevelPause/resumeButton.gd" id="3_ey1hb"]
+[ext_resource type="Script" path="res://Scripts/WorldElements/LevelPause/exitButton.gd" id="4_kj2p0"]
+
+[node name="PauseMenu" type="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+z_index = 6
+layout_mode = 0
+offset_left = 496.0
+offset_top = 83.0
+offset_right = 631.0
+offset_bottom = 131.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_g26ut")
+theme_override_font_sizes/font_size = 60
+text = "Paused"
+
+[node name="ResumeButton" type="Button" parent="."]
+z_index = 6
+layout_mode = 0
+offset_left = 357.0
+offset_top = 182.0
+offset_right = 768.0
+offset_bottom = 289.0
+focus_neighbor_top = NodePath("../ExitButton")
+focus_neighbor_bottom = NodePath("../ExitButton")
+focus_next = NodePath("../ExitButton")
+focus_previous = NodePath("../ExitButton")
+mouse_default_cursor_shape = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_g26ut")
+theme_override_font_sizes/font_size = 60
+text = "Resume
+"
+icon = ExtResource("2_cetir")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_ey1hb")
+
+[node name="ExitButton" type="Button" parent="."]
+z_index = 6
+layout_mode = 0
+offset_left = 357.0
+offset_top = 313.0
+offset_right = 768.0
+offset_bottom = 420.0
+focus_neighbor_top = NodePath("../ResumeButton")
+focus_neighbor_bottom = NodePath("../ResumeButton")
+focus_next = NodePath("../ResumeButton")
+focus_previous = NodePath("../ResumeButton")
+mouse_default_cursor_shape = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_g26ut")
+theme_override_font_sizes/font_size = 60
+text = "Exit"
+icon = ExtResource("2_cetir")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_kj2p0")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = 5
+position = Vector2(-480, -296)
+color = Color(0.000350777, 0, 0.393303, 0.384314)
+polygon = PackedVector2Array(-325, -242, 2456, -250, 2456, 1362, -325, 1362)
+
+[connection signal="button_up" from="ResumeButton" to="ResumeButton" method="_on_resumeButton_up"]
+[connection signal="button_up" from="ExitButton" to="ExitButton" method="_on_exitButton_up"]

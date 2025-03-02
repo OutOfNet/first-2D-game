@@ -1,0 +1,134 @@
+[gd_scene load_steps=19 format=3 uid="uid://xj7xlh1nptm5"]
+
+[ext_resource type="Texture2D" uid="uid://d84mtv8k72gf" path="res://Sprites/UI/StaminaBar/staminaBar.png" id="1_epv2l"]
+[ext_resource type="Script" path="res://Scripts/UI/StaminaBar/StaminaBar.gd" id="2_w1p6y"]
+[ext_resource type="Texture2D" uid="uid://cqrq5ej82s6nd" path="res://Sprites/UI/InputIcons/gdb-keyboard-2.png" id="3_bjmwq"]
+[ext_resource type="Texture2D" uid="uid://ccr8gyaqhenyh" path="res://Sprites/UI/InputIcons/gdb-playstation-2.png" id="4_k3wk2"]
+[ext_resource type="Texture2D" uid="uid://v4rits8gkc88" path="res://Sprites/UI/InputIcons/gdb-xbox-2.png" id="5_i7ioj"]
+[ext_resource type="Texture2D" uid="uid://dyhtyxbp32da0" path="res://Sprites/UI/InputIcons/gdb-switch-2.png" id="6_7dij3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeny1"]
+atlas = ExtResource("1_epv2l")
+region = Rect2(110, 0, 10, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v66h0"]
+atlas = ExtResource("1_epv2l")
+region = Rect2(99, 0, 10, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx37r"]
+atlas = ExtResource("1_epv2l")
+region = Rect2(88, 0, 10, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83yd5"]
+atlas = ExtResource("1_epv2l")
+region = Rect2(77, 0, 10, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktd6s"]
+atlas = ExtResource("1_epv2l")
+region = Rect2(66, 0, 10, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7mp8"]
+atlas = ExtResource("1_epv2l")
+region = Rect2(55, 0, 10, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l3c8"]
+atlas = ExtResource("1_epv2l")
+region = Rect2(44, 0, 10, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bwce"]
+atlas = ExtResource("1_epv2l")
+region = Rect2(33, 0, 10, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iorl"]
+atlas = ExtResource("1_epv2l")
+region = Rect2(22, 0, 10, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmuso"]
+atlas = ExtResource("1_epv2l")
+region = Rect2(11, 0, 10, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w58rn"]
+atlas = ExtResource("1_epv2l")
+region = Rect2(0, 0, 10, 2)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gsrjm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeny1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v66h0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx37r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83yd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktd6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7mp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l3c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bwce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iorl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmuso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w58rn")
+}],
+"loop": false,
+"name": &"StaminaBar",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+light_mask = 2
+scale = Vector2(30, 30)
+sprite_frames = SubResource("SpriteFrames_gsrjm")
+animation = &"StaminaBar"
+frame_progress = 1.0
+script = ExtResource("2_w1p6y")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+show_behind_parent = true
+color = Color(0, 0.243329, 0.453597, 1)
+polygon = PackedVector2Array(-5.2, -1.2, 5.2, -1.2, 5.2, 1.2, -5.2, 1.2)
+
+[node name="keyboardShiftIcon" type="Sprite2D" parent="."]
+position = Vector2(-7, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_bjmwq")
+region_enabled = true
+region_rect = Rect2(36, 193, 24, 15)
+
+[node name="playstationR2Icon" type="Sprite2D" parent="."]
+position = Vector2(-9.1, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_k3wk2")
+region_enabled = true
+region_rect = Rect2(368, 96, 16, 16)
+
+[node name="XboxRtIcon" type="Sprite2D" parent="."]
+position = Vector2(-10.8, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_i7ioj")
+region_enabled = true
+region_rect = Rect2(368, 64, 16, 16)
+
+[node name="SwitchZrIcon" type="Sprite2D" parent="."]
+position = Vector2(-12.3, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_7dij3")
+region_enabled = true
+region_rect = Rect2(338, 65, 12, 15)

@@ -1,0 +1,158 @@
+[gd_scene load_steps=23 format=3 uid="uid://cj6dujbx2t8f4"]
+
+[ext_resource type="Texture2D" uid="uid://br5gfgiu01mo1" path="res://Sprites/Collectibles/spinningFloppyDisk.png" id="1_tiwca"]
+[ext_resource type="Script" path="res://Scripts/Collectibles/FloppyDiskCheckpoint/Checkpoint.gd" id="2_4bpt3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5q5s"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqajw"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi3wb"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kee8i"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajqke"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypinr"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc7ga"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44m7t"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4pck"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaeqj"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nq6sv"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bj13"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2jv6"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnsca"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obctv"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(224, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdtg3"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(240, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7aqd"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(256, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67wvp"]
+atlas = ExtResource("1_tiwca")
+region = Rect2(272, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dc2wh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5q5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqajw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi3wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kee8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajqke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypinr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc7ga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44m7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4pck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaeqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nq6sv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bj13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2jv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnsca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obctv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdtg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7aqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67wvp")
+}],
+"loop": true,
+"name": &"floppyDiskCheckpoint",
+"speed": 18.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdhla"]
+size = Vector2(11, 1000)
+
+[node name="Checkpoint" type="Node2D"]
+scale = Vector2(5, 5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dc2wh")
+animation = &"floppyDiskCheckpoint"
+autoplay = "floppyDiskCheckpoint"
+frame_progress = 0.0360595
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_4bpt3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vdhla")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

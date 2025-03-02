@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=3 uid="uid://bospvvkfci3sh"]
+
+[ext_resource type="Script" path="res://Scripts/UI/MainMenu/levelSelect.gd" id="1_r3kpy"]
+[ext_resource type="FontFile" uid="uid://cxhm1llmyok6f" path="res://Fonts/m5x7.ttf" id="1_wbg8e"]
+[ext_resource type="Texture2D" uid="uid://dphrtr533m2r8" path="res://Sprites/UI/MainMenu/MenuButton.png" id="2_wmxwg"]
+[ext_resource type="Script" path="res://Scripts/UI/MainMenu/level1Select.gd" id="3_r41d2"]
+[ext_resource type="Script" path="res://Scripts/UI/MainMenu/level2Select.gd" id="4_rltyl"]
+[ext_resource type="Script" path="res://Scripts/UI/MainMenu/level3Select.gd" id="6_jo4v4"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r3kpy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 323)
+
+[node name="Level1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 246.0
+offset_top = -33.0
+offset_right = 376.0
+offset_bottom = 7.0
+scale = Vector2(5, 5)
+mouse_default_cursor_shape = 2
+theme_override_colors/font_outline_color = Color(0.203922, 0.203922, 0.254902, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_wbg8e")
+theme_override_font_sizes/font_size = 20
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Level 1"
+icon = ExtResource("2_wmxwg")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_r41d2")
+
+[node name="Level2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 209.0
+offset_right = 376.0
+offset_bottom = 249.0
+scale = Vector2(5, 5)
+mouse_default_cursor_shape = 2
+theme_override_colors/font_outline_color = Color(0.203922, 0.203922, 0.254902, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_wbg8e")
+theme_override_font_sizes/font_size = 20
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Level 2"
+icon = ExtResource("2_wmxwg")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_rltyl")
+
+[node name="Level3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 443.0
+offset_right = 383.0
+offset_bottom = 483.0
+scale = Vector2(5, 5)
+mouse_default_cursor_shape = 2
+theme_override_colors/font_outline_color = Color(0.203922, 0.203922, 0.254902, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_wbg8e")
+theme_override_font_sizes/font_size = 20
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Level 3"
+icon = ExtResource("2_wmxwg")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("6_jo4v4")
+
+[node name="Loading" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 6
+layout_mode = 0
+offset_left = 409.0
+offset_top = 247.0
+offset_right = 747.0
+offset_bottom = 342.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("1_wbg8e")
+theme_override_font_sizes/font_size = 120
+text = "Loading..."
+
+[node name="Polygon2D" type="Polygon2D" parent="Loading"]
+show_behind_parent = true
+position = Vector2(-11, -76)
+color = Color(7.21961e-07, 0, 0.383389, 0.313726)
+polygon = PackedVector2Array(-823, -442, 1220, -442, 1220, 726, -823, 726)
+
+[connection signal="button_up" from="Level1" to="Level1" method="_on_button_up"]
+[connection signal="button_up" from="Level2" to="Level2" method="_on_button_up"]
+[connection signal="button_up" from="Level3" to="Level3" method="_on_button_up"]

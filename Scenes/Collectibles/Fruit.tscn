@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmv83p5d6c0m6"]
+
+[ext_resource type="Texture2D" uid="uid://2jrajc7j8k06" path="res://Sprites/Collectibles/fruit.png" id="1_t77he"]
+[ext_resource type="Script" path="res://Scripts/Collectibles/Fruit/fruit.gd" id="2_4crl6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeoj2"]
+atlas = ExtResource("1_t77he")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttt7q"]
+atlas = ExtResource("1_t77he")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb02e"]
+atlas = ExtResource("1_t77he")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe8it"]
+atlas = ExtResource("1_t77he")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n15pr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oeoj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttt7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb02e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe8it")
+}],
+"loop": true,
+"name": &"Berry",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdhla"]
+size = Vector2(15, 15)
+
+[node name="Fruit" type="Node2D"]
+scale = Vector2(5, 5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n15pr")
+animation = &"Berry"
+autoplay = "Berry"
+frame_progress = 0.524252
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_4crl6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_vdhla")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

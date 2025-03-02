@@ -1,0 +1,137 @@
+[gd_scene load_steps=9 format=3 uid="uid://yurn1pnjfqf2"]
+
+[ext_resource type="FontFile" uid="uid://cxhm1llmyok6f" path="res://Fonts/m5x7.ttf" id="1_6033k"]
+[ext_resource type="Texture2D" uid="uid://dphrtr533m2r8" path="res://Sprites/UI/MainMenu/MenuButton.png" id="2_1yfx5"]
+[ext_resource type="Script" path="res://Scripts/UI/MainMenu/PlayButton.gd" id="3_le53e"]
+[ext_resource type="Script" path="res://Scripts/UI/MainMenu/Credits.gd" id="4_ma4ha"]
+[ext_resource type="Texture2D" uid="uid://ccr8gyaqhenyh" path="res://Sprites/UI/InputIcons/gdb-playstation-2.png" id="5_cq0or"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnw4j"]
+atlas = ExtResource("5_cq0or")
+region = Rect2(32, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at6x2"]
+atlas = ExtResource("5_cq0or")
+region = Rect2(64, 288, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y03wb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnw4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at6x2")
+}],
+"loop": true,
+"name": &"ButtonPressing",
+"speed": 3.0
+}]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 323)
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 100.0
+offset_right = 378.0
+offset_bottom = 140.0
+scale = Vector2(5, 5)
+focus_neighbor_top = NodePath("../Credits")
+focus_neighbor_bottom = NodePath("../Credits")
+focus_next = NodePath("../Credits")
+focus_previous = NodePath("../Credits")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_outline_color = Color(0.203922, 0.203922, 0.254902, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_6033k")
+theme_override_font_sizes/font_size = 20
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Play"
+icon = ExtResource("2_1yfx5")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_le53e")
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 314.0
+offset_right = 378.0
+offset_bottom = 354.0
+scale = Vector2(5, 5)
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_bottom = NodePath("../PlayButton")
+focus_next = NodePath("../PlayButton")
+focus_previous = NodePath("../PlayButton")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_outline_color = Color(0.203922, 0.203922, 0.254902, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_6033k")
+theme_override_font_sizes/font_size = 20
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Credits"
+icon = ExtResource("2_1yfx5")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_ma4ha")
+
+[node name="JumpController2" type="Node2D" parent="."]
+position = Vector2(52, 592)
+scale = Vector2(1.5, 1.5)
+
+[node name="NotThisButton" type="Sprite2D" parent="JumpController2"]
+position = Vector2(18, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_cq0or")
+region_enabled = true
+region_rect = Rect2(33, 288, 14, 16)
+
+[node name="NotThisButtonEither" type="Sprite2D" parent="JumpController2"]
+position = Vector2(0, -18)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_cq0or")
+region_enabled = true
+region_rect = Rect2(33, 288, 14, 16)
+
+[node name="StillNotThisButton" type="Sprite2D" parent="JumpController2"]
+position = Vector2(36, -18)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_cq0or")
+region_enabled = true
+region_rect = Rect2(33, 288, 14, 16)
+
+[node name="YES, THIS BUTTON" type="AnimatedSprite2D" parent="JumpController2"]
+position = Vector2(18, -37)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_y03wb")
+animation = &"ButtonPressing"
+autoplay = "ButtonPressing"
+frame_progress = 0.22742
+
+[node name="SelectIndication" type="Label" parent="JumpController2"]
+offset_left = 52.6667
+offset_top = -36.6667
+offset_right = 187.667
+offset_bottom = -4.66667
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_6033k")
+theme_override_font_sizes/font_size = 40
+text = "to confirm"
+
+[connection signal="button_up" from="PlayButton" to="PlayButton" method="_on_button_up"]
+[connection signal="button_up" from="Credits" to="Credits" method="_on_button_up"]
