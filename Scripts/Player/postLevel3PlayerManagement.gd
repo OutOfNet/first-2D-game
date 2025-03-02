@@ -19,6 +19,7 @@ var diedRecently = false
 var recoveringStamina = false
 var levelEnded = false
 var endAnimation = false
+var sprintDuration = 0
 
 @onready var pauseMenu = $"../UI/CanvasLayer/PauseMenu"
 
@@ -29,8 +30,14 @@ func _input(_event: InputEvent) -> void:
 		isSprinting = true
 		speed = 900
 		while stamina > 0 && pauseMenu.modulate.a == 0:
+			sprintDuration += 1
+			print("   Sprint duration : ", sprintDuration)
+			if Input.is_action_just_pressed("sprintInput") && pauseMenu.modulate.a == 0 && sprintDuration > 1:
+				print("Sprinting stopped.")
+				sprintDuration = 0
+				break
 			stamina -= 1
-			print(stamina)
+			print("Current stamina : ", stamina)
 			await get_tree().create_timer(.3).timeout
 		isSprinting = false
 		speed = 700
