@@ -585,5 +585,4 @@ shape = SubResource("RectangleShape2D_n5vdw")
 position = Vector2(2.38419e-07, -4)
 scale = Vector2(1.4125, 1.4125)
 sprite_frames = SubResource("SpriteFrames_7jrxe")
-animation = &"sprintRun"
-frame_progress = 0.822014
+animation = &"Idle"

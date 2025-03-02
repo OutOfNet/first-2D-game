@@ -414,14 +414,34 @@ texture = ExtResource("7_udceu")
 [node name="Fruits" type="Node2D" parent="."]
 
 [node name="Fruit" parent="Fruits" instance=ExtResource("8_ti42u")]
-position = Vector2(-494, -398)
+position = Vector2(3939, -554)
 
 [node name="Coins" type="Node2D" parent="."]
 position = Vector2(6214, -296)
 scale = Vector2(15, 15)
 
 [node name="Coin" parent="Coins" instance=ExtResource("9_4eng6")]
-position = Vector2(-442.867, 0.26667)
+position = Vector2(-378, -3)
+scale = Vector2(0.333333, 0.333333)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("9_4eng6")]
+position = Vector2(-370, -3)
+scale = Vector2(0.333333, 0.333333)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("9_4eng6")]
+position = Vector2(-362, -3)
+scale = Vector2(0.333333, 0.333333)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("9_4eng6")]
+position = Vector2(-354, -3)
+scale = Vector2(0.333333, 0.333333)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("9_4eng6")]
+position = Vector2(-346, -3)
+scale = Vector2(0.333333, 0.333333)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("9_4eng6")]
+position = Vector2(-338, -3)
 scale = Vector2(0.333333, 0.333333)
 
 [node name="UI" type="Control" parent="."]

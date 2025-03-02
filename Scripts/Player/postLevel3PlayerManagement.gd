@@ -34,7 +34,7 @@ func _input(_event: InputEvent) -> void:
 			print("   Sprint duration : ", sprintDuration)
 			# Interrups sprint if the sprint input is pressed again (only problem is that it only works on the
 			# exact frame on which the stamina is consumed).
-			if Input.is_action_just_pressed("sprintInput") && pauseMenu.modulate.a == 0 && sprintDuration > 1:
+			if Input.is_action_just_pressed("sprintInput") && pauseMenu.modulate.a == 0 && sprintDuration > 1 && speed == 900:
 				print("Sprinting stopped.")
 				sprintDuration = 0
 				break

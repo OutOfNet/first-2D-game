@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnqmfgqpwuyfb"]
+[gd_scene load_steps=8 format=3 uid="uid://cnqmfgqpwuyfb"]
 
 [ext_resource type="Script" path="res://Scripts/WorldElements/GravityPlatform/GravityPlatform.gd" id="1_mo25e"]
 [ext_resource type="Texture2D" uid="uid://bw6secaj7mwl" path="res://Sprites/Terrain/GripWallDisabled.png" id="2_i0p85"]
@@ -33,9 +33,6 @@ animations = [{
 "name": &"GripWallEnabled",
 "speed": 1.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6rjg"]
-size = Vector2(144, 10.5)
 
 [node name="GripWall3x1" type="Node2D"]
 
@@ -76,12 +73,3 @@ shape = SubResource("RectangleShape2D_emhb1")
 sprite_frames = SubResource("SpriteFrames_85da2")
 animation = &"GripWallEnabled"
 autoplay = "GripWallDisabled"
-
-[node name="playerDetection" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="playerDetection"]
-position = Vector2(48, -24)
-shape = SubResource("RectangleShape2D_c6rjg")
-
-[connection signal="body_entered" from="playerDetection" to="HitBox" method="_on_playerDetection_body_entered"]
-[connection signal="body_exited" from="playerDetection" to="HitBox" method="_on_playerDetection_body_exited"]

@@ -3,11 +3,9 @@ extends Camera2D
 var player
 var isPlayerSprinting
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_node(^"../../Player")
 
-# Called every frame the scene runs.
 func _process(_delta: float) -> void:
 	# Checks whether or not the player is sprinting.
 	isPlayerSprinting = player.isSprinting

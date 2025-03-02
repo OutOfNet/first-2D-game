@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c7onm24xhsymm" path="res://Sprites/Terrain/world_tileset.png" id="3_mg7jt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emhb1"]
-size = Vector2(15, 15)
+size = Vector2(15.9583, 15.9167)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_adlij"]
 atlas = ExtResource("2_brbrn")
@@ -66,6 +66,7 @@ position = Vector2(96, 0)
 script = ExtResource("1_lupud")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox3"]
+position = Vector2(0.0625, 0)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_emhb1")
 
