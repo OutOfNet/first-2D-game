@@ -1,4 +1,5 @@
 res://Scenes/Levels/thirdLevel.tscn
 res://Scripts/Player/postLevel3PlayerManagement.gd
-res://Scripts/WorldElements/LevelPause/levelPause.gd
 res://Scripts/Player/preLevel3PlayerManagement.gd
+res://Scripts/WorldElements/LevelEnd/LevelEnd.gd
+res://Scripts/WorldElements/GravityPlatform/GravityPlatform.gd

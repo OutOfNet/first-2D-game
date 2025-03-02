@@ -8,5 +8,7 @@ func _on_body_entered(body) -> void:
 		player.get_node(^"AnimatedSprite2D").play("Idle")
 		await get_tree().create_timer(1).timeout
 		player.get_parent().levelEnded = true
+		player.get_parent().endAnimation = true
+		player.get_node(^"AnimatedSprite2D").play("LevelEnd")
 		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_file("res://Scenes/UI/MainMenu/MainMenu.tscn")

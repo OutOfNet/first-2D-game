@@ -22,6 +22,11 @@ var sprintDuration = 0
 
 @onready var pauseMenu = $"../UI/CanvasLayer/PauseMenu"
 
+func sprintInterrupt() -> void:
+	print("Sprinting stopped.")
+	sprintDuration = 0
+	speed = 700
+
 func _input(_event: InputEvent) -> void:
 	
 	# Handles player sprint.
@@ -35,15 +40,14 @@ func _input(_event: InputEvent) -> void:
 			# Interrups sprint if the sprint input is pressed again (only problem is that it only works on the
 			# exact frame on which the stamina is consumed).
 			if Input.is_action_just_pressed("sprintInput") && pauseMenu.modulate.a == 0 && sprintDuration > 1 && speed == 900:
-				print("Sprinting stopped.")
-				sprintDuration = 0
-				speed = 700
+				sprintInterrupt()
 				break
 			stamina -= 1
 			print("Current stamina : ", stamina)
 			await get_tree().create_timer(.3).timeout
 		isSprinting = false
 		speed = 700
+		sprintDuration = 0
 
 	# Handles player jump.
 	if Input.is_action_just_pressed("jumpInput") && fallTime < .15 && hasJumped == false && levelEnded == false && diedRecently == false:
@@ -122,9 +126,5 @@ func _physics_process(delta: float) -> void:
 			$"CharacterBody2D/AnimatedSprite2D".play("Idle")
 		elif isSprinting == true && ($"CharacterBody2D".is_on_floor() or $"CharacterBody2D".is_on_ceiling()) && levelEnded == false:
 			$"CharacterBody2D/AnimatedSprite2D".play("sprintIdle")
-	
-	if levelEnded == true && endAnimation == false:
-		endAnimation = true
-		$"CharacterBody2D/AnimatedSprite2D".play("LevelEnd")
 
 	$"CharacterBody2D".move_and_slide()

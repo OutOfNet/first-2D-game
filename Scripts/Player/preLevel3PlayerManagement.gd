@@ -9,7 +9,6 @@ var jumpVelocity = -1000.0
 
 var fallTime = 0
 var hasJumped = true
-var isGoingRight
 var stamina = 10
 var maxStamina = 10.0
 var isSprinting = false
@@ -23,6 +22,11 @@ var sprintDuration = 0
 
 @onready var pauseMenu = $"../UI/CanvasLayer/PauseMenu"
 
+func sprintInterrupt() -> void:
+	print("Sprinting stopped.")
+	sprintDuration = 0
+	speed = 700
+
 func _input(_event: InputEvent) -> void:
 	
 	# Handles player sprint.
@@ -35,15 +39,14 @@ func _input(_event: InputEvent) -> void:
 			# Interrups sprint if the sprint input is pressed again (only problem is that it only works on the
 			# exact frame on which the stamina is consumed).
 			if Input.is_action_just_pressed("sprintInput") && pauseMenu.modulate.a == 0 && sprintDuration > 1 && speed == 900:
-				print("Sprinting stopped.")
-				sprintDuration = 0
-				speed = 700
+				sprintInterrupt()
 				break
 			stamina -= 1
 			print(stamina)
 			await get_tree().create_timer(.3).timeout
 		isSprinting = false
 		speed = 700
+		sprintDuration = 0
 	
 	# Handles player jump.
 	if Input.is_action_just_pressed("jumpInput") && fallTime < .15 && hasJumped == false && levelEnded == false && diedRecently == false:
@@ -97,23 +100,19 @@ func _physics_process(delta: float) -> void:
 	if direction && not diedRecently:
 		$"CharacterBody2D".velocity.x = direction * speed
 		if $"CharacterBody2D".velocity.x > 0:
-			isGoingRight = false
+			$"CharacterBody2D/AnimatedSprite2D".set_flip_h(0)
 		elif $"CharacterBody2D".velocity.x < 0:
-			isGoingRight = true
+			$"CharacterBody2D/AnimatedSprite2D".set_flip_h(1)
 		if isSprinting == false && $"CharacterBody2D".is_on_floor():
 			$"CharacterBody2D/AnimatedSprite2D".play("Run")
 		elif isSprinting == true && $"CharacterBody2D".is_on_floor():
 			$"CharacterBody2D/AnimatedSprite2D".play("sprintRun")
-		$"CharacterBody2D/AnimatedSprite2D".set_flip_h(isGoingRight)
+		
 	else:
 		$"CharacterBody2D".velocity.x = move_toward($"CharacterBody2D".velocity.x, 0, speed)
 		if isSprinting == false && $"CharacterBody2D".is_on_floor() && levelEnded == false:
 			$"CharacterBody2D/AnimatedSprite2D".play("Idle")
 		elif isSprinting == true && $"CharacterBody2D".is_on_floor() && levelEnded == false:
 			$"CharacterBody2D/AnimatedSprite2D".play("sprintIdle")
-	
-	if levelEnded == true && endAnimation == false:
-		endAnimation = true
-		$"CharacterBody2D/AnimatedSprite2D".play("LevelEnd")
 
 	$"CharacterBody2D".move_and_slide()
