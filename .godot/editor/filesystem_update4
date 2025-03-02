@@ -1,7 +1,4 @@
-res://Scenes/CharactersAndMobs/Player/Player.tscn
 res://Scenes/Levels/thirdLevel.tscn
-res://Scenes/WorldElements/GravityPlatforms/GravityPlatform2x1.tscn
-res://Scenes/WorldElements/GravityPlatforms/GravityPlatform1x1.tscn
-res://Scenes/WorldElements/GravityPlatforms/GravityPlatform3x1.tscn
-res://Scenes/WorldElements/GravityPlatforms/GravityPlatform4x1.tscn
 res://Scripts/Player/postLevel3PlayerManagement.gd
+res://Scripts/WorldElements/LevelPause/levelPause.gd
+res://Scripts/Player/preLevel3PlayerManagement.gd

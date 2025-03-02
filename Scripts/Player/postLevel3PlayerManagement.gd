@@ -9,7 +9,6 @@ var jumpVelocity = -1000.0
 
 var fallTime = 0
 var hasJumped = true
-var isGoingRight
 var stamina = 10
 var maxStamina = 10.0
 var isSprinting = false
@@ -27,6 +26,7 @@ func _input(_event: InputEvent) -> void:
 	
 	# Handles player sprint.
 	if Input.is_action_just_pressed("sprintInput") && stamina >= maxStamina * .3 && isSprinting == false && pauseMenu.modulate.a == 0:
+		print("Sprinting started.")
 		isSprinting = true
 		speed = 900
 		while stamina > 0 && pauseMenu.modulate.a == 0:
@@ -37,13 +37,14 @@ func _input(_event: InputEvent) -> void:
 			if Input.is_action_just_pressed("sprintInput") && pauseMenu.modulate.a == 0 && sprintDuration > 1 && speed == 900:
 				print("Sprinting stopped.")
 				sprintDuration = 0
+				speed = 700
 				break
 			stamina -= 1
 			print("Current stamina : ", stamina)
 			await get_tree().create_timer(.3).timeout
 		isSprinting = false
 		speed = 700
-	
+
 	# Handles player jump.
 	if Input.is_action_just_pressed("jumpInput") && fallTime < .15 && hasJumped == false && levelEnded == false && diedRecently == false:
 		if isSprinting == false:
@@ -108,14 +109,13 @@ func _physics_process(delta: float) -> void:
 	if direction && not diedRecently:
 		$"CharacterBody2D".velocity.x = direction * speed
 		if $"CharacterBody2D".velocity.x > 0:
-			isGoingRight = false
+			$"CharacterBody2D/AnimatedSprite2D".set_flip_h(0)
 		elif $"CharacterBody2D".velocity.x < 0:
-			isGoingRight = true
+			$"CharacterBody2D/AnimatedSprite2D".set_flip_h(1)
 		if isSprinting == false && $"CharacterBody2D".is_on_floor():
 			$"CharacterBody2D/AnimatedSprite2D".play("Run")
 		elif isSprinting == true && ($"CharacterBody2D".is_on_floor() or $"CharacterBody2D".is_on_ceiling()):
 			$"CharacterBody2D/AnimatedSprite2D".play("sprintRun")
-		$"CharacterBody2D/AnimatedSprite2D".set_flip_h(isGoingRight)
 	else:
 		$"CharacterBody2D".velocity.x = move_toward($"CharacterBody2D".velocity.x, 0, speed)
 		if isSprinting == false && ($"CharacterBody2D".is_on_floor() or $"CharacterBody2D".is_on_ceiling()) && levelEnded == false:

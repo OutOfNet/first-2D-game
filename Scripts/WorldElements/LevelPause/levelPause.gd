@@ -13,6 +13,7 @@ func _process(_delta: float) -> void:
 		coins.process_mode = Node.PROCESS_MODE_DISABLED
 		checkpoints.process_mode = Node.PROCESS_MODE_DISABLED
 		pauseMenu.modulate = Color(1, 1, 1, 1)
+		player.sprintDuration = 0
 		print("Game has been paused.")
 	elif Input.is_action_just_pressed("PauseOrExit") && pauseMenu.modulate.a > 0.5:
 		player.process_mode = Node.PROCESS_MODE_INHERIT
