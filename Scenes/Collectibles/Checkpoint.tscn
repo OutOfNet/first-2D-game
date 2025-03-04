@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://cj6dujbx2t8f4"]
 
 [ext_resource type="Texture2D" uid="uid://br5gfgiu01mo1" path="res://Sprites/Collectibles/spinningFloppyDisk.png" id="1_tiwca"]
-[ext_resource type="Script" path="res://Scripts/Collectibles/FloppyDiskCheckpoint/Checkpoint.gd" id="2_4bpt3"]
+[ext_resource type="Script" uid="uid://cf4krpbywb7pu" path="res://Scripts/Collectibles/FloppyDiskCheckpoint/Checkpoint.gd" id="2_4bpt3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d5q5s"]
 atlas = ExtResource("1_tiwca")

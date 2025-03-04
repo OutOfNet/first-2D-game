@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cwp5v47pbwufo"]
 
-[ext_resource type="Script" path="res://Scripts/WorldElements/GravityPlatform/GravityPlatform.gd" id="1_5yqdr"]
+[ext_resource type="Script" uid="uid://81hqbc7qw0md" path="res://Scripts/WorldElements/GravityPlatform/GravityPlatform.gd" id="1_5yqdr"]
 [ext_resource type="Texture2D" uid="uid://c7onm24xhsymm" path="res://Sprites/Terrain/world_tileset.png" id="1_31r86"]
 [ext_resource type="Texture2D" uid="uid://bw6secaj7mwl" path="res://Sprites/Terrain/GripWallDisabled.png" id="1_jd7ay"]
 

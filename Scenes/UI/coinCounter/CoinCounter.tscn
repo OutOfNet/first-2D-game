@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://mqmd6orogdk0"]
 
-[ext_resource type="Script" path="res://Scripts/UI/Coin Counter/coinCounter.gd" id="1_0c6jy"]
+[ext_resource type="Script" uid="uid://0mqcde01ktwj" path="res://Scripts/UI/Coin Counter/coinCounter.gd" id="1_0c6jy"]
 [ext_resource type="FontFile" uid="uid://cxhm1llmyok6f" path="res://Fonts/m5x7.ttf" id="1_8u5gr"]
 
 [node name="CoinCounter" type="Label"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://cxhm1llmyok6f" path="res://Fonts/m5x7.ttf" id="1_6033k"]
 [ext_resource type="Texture2D" uid="uid://dphrtr533m2r8" path="res://Sprites/UI/MainMenu/MenuButton.png" id="2_1yfx5"]
-[ext_resource type="Script" path="res://Scripts/UI/MainMenu/PlayButton.gd" id="3_le53e"]
-[ext_resource type="Script" path="res://Scripts/UI/MainMenu/Credits.gd" id="4_ma4ha"]
+[ext_resource type="Script" uid="uid://dt3wiiny5sgvj" path="res://Scripts/UI/MainMenu/PlayButton.gd" id="3_le53e"]
+[ext_resource type="Script" uid="uid://0dm51qlkodew" path="res://Scripts/UI/MainMenu/Credits.gd" id="4_ma4ha"]
 [ext_resource type="Texture2D" uid="uid://ccr8gyaqhenyh" path="res://Sprites/UI/InputIcons/gdb-playstation-2.png" id="5_cq0or"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dnw4j"]

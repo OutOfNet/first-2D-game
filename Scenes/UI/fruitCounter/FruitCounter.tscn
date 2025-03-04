@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bucpjuhjh05id"]
 
 [ext_resource type="FontFile" uid="uid://cxhm1llmyok6f" path="res://Fonts/m5x7.ttf" id="1_k6nc2"]
-[ext_resource type="Script" path="res://Scripts/UI/FruitCounter/fruitCounter.gd" id="2_tpi7y"]
+[ext_resource type="Script" uid="uid://ppupusqwea6r" path="res://Scripts/UI/FruitCounter/fruitCounter.gd" id="2_tpi7y"]
 
 [node name="FruitCounter" type="Label"]
 offset_right = 40.0

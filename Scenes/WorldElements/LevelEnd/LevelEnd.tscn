@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://rf52je1o2eid"]
 
-[ext_resource type="Script" path="res://Scripts/WorldElements/LevelEnd/LevelEnd.gd" id="1_uoeq1"]
+[ext_resource type="Script" uid="uid://cs7rji248rmm4" path="res://Scripts/WorldElements/LevelEnd/LevelEnd.gd" id="1_uoeq1"]
 [ext_resource type="Texture2D" uid="uid://c7onm24xhsymm" path="res://Sprites/Terrain/world_tileset.png" id="2_fhxra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yte0j"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=78 format=3 uid="uid://d0osapqo11s5k"]
 
 [ext_resource type="Texture2D" uid="uid://dnn4d1sbmqkeo" path="res://Sprites/Characters and Mobs/Knight/knight.png" id="1_14b7j"]
-[ext_resource type="Script" path="res://Scripts/Player/preLevel3PlayerManagement.gd" id="1_o7akw"]
+[ext_resource type="Script" uid="uid://deyh1p77pqf8n" path="res://Scripts/Player/preLevel3PlayerManagement.gd" id="1_o7akw"]
 [ext_resource type="Texture2D" uid="uid://cyl0pc2jqfhxd" path="res://Sprites/Characters and Mobs/Knight/knightSprinting.png" id="3_mc8vs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5vdw"]

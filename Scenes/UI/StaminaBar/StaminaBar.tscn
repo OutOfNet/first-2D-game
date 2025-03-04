@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://xj7xlh1nptm5"]
 
 [ext_resource type="Texture2D" uid="uid://d84mtv8k72gf" path="res://Sprites/UI/StaminaBar/staminaBar.png" id="1_epv2l"]
-[ext_resource type="Script" path="res://Scripts/UI/StaminaBar/StaminaBar.gd" id="2_w1p6y"]
+[ext_resource type="Script" uid="uid://cl1h8m8vl2cnd" path="res://Scripts/UI/StaminaBar/StaminaBar.gd" id="2_w1p6y"]
 [ext_resource type="Texture2D" uid="uid://cqrq5ej82s6nd" path="res://Sprites/UI/InputIcons/gdb-keyboard-2.png" id="3_bjmwq"]
 [ext_resource type="Texture2D" uid="uid://ccr8gyaqhenyh" path="res://Sprites/UI/InputIcons/gdb-playstation-2.png" id="4_k3wk2"]
 [ext_resource type="Texture2D" uid="uid://v4rits8gkc88" path="res://Sprites/UI/InputIcons/gdb-xbox-2.png" id="5_i7ioj"]

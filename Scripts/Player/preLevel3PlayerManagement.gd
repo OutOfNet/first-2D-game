@@ -32,6 +32,8 @@ func _input(_event: InputEvent) -> void:
 	# Handles player sprint.
 	if Input.is_action_just_pressed("sprintInput") && stamina >= maxStamina * .3 && isSprinting == false && pauseMenu.modulate.a == 0:
 		isSprinting = true
+		await get_tree().create_timer(.05).timeout
+		$"../UI/Camera2D".cameraZoomModify()
 		speed = 900
 		while stamina > 0 && pauseMenu.modulate.a == 0:
 			sprintDuration += 1
@@ -40,11 +42,14 @@ func _input(_event: InputEvent) -> void:
 			# exact frame on which the stamina is consumed).
 			if Input.is_action_just_pressed("sprintInput") && pauseMenu.modulate.a == 0 && sprintDuration > 1 && speed == 900:
 				sprintInterrupt()
+				$"../UI/Camera2D".cameraZoomModify()
 				break
 			stamina -= 1
 			print(stamina)
 			await get_tree().create_timer(.3).timeout
 		isSprinting = false
+		await get_tree().create_timer(.05).timeout
+		$"../UI/Camera2D".cameraZoomModify()
 		speed = 700
 		sprintDuration = 0
 	

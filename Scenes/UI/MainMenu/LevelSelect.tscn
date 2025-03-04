@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bospvvkfci3sh"]
 
-[ext_resource type="Script" path="res://Scripts/UI/MainMenu/levelSelect.gd" id="1_r3kpy"]
+[ext_resource type="Script" uid="uid://braxgoorwleth" path="res://Scripts/UI/MainMenu/levelSelect.gd" id="1_r3kpy"]
 [ext_resource type="FontFile" uid="uid://cxhm1llmyok6f" path="res://Fonts/m5x7.ttf" id="1_wbg8e"]
 [ext_resource type="Texture2D" uid="uid://dphrtr533m2r8" path="res://Sprites/UI/MainMenu/MenuButton.png" id="2_wmxwg"]
-[ext_resource type="Script" path="res://Scripts/UI/MainMenu/level1Select.gd" id="3_r41d2"]
-[ext_resource type="Script" path="res://Scripts/UI/MainMenu/level2Select.gd" id="4_rltyl"]
-[ext_resource type="Script" path="res://Scripts/UI/MainMenu/level3Select.gd" id="6_jo4v4"]
+[ext_resource type="Script" uid="uid://bas1kujduee87" path="res://Scripts/UI/MainMenu/level1Select.gd" id="3_r41d2"]
+[ext_resource type="Script" uid="uid://djpqs1o3oym14" path="res://Scripts/UI/MainMenu/level2Select.gd" id="4_rltyl"]
+[ext_resource type="Script" uid="uid://dfujx58n1hlhg" path="res://Scripts/UI/MainMenu/level3Select.gd" id="6_jo4v4"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

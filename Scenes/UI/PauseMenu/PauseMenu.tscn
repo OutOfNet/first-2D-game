@@ -2,8 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://cxhm1llmyok6f" path="res://Fonts/m5x7.ttf" id="1_g26ut"]
 [ext_resource type="Texture2D" uid="uid://dphrtr533m2r8" path="res://Sprites/UI/MainMenu/MenuButton.png" id="2_cetir"]
-[ext_resource type="Script" path="res://Scripts/WorldElements/LevelPause/resumeButton.gd" id="3_ey1hb"]
-[ext_resource type="Script" path="res://Scripts/WorldElements/LevelPause/exitButton.gd" id="4_kj2p0"]
+[ext_resource type="Script" uid="uid://bbmw312attmb5" path="res://Scripts/WorldElements/LevelPause/resumeButton.gd" id="3_ey1hb"]
+[ext_resource type="Script" uid="uid://cvhbvkq2qhij2" path="res://Scripts/WorldElements/LevelPause/exitButton.gd" id="4_kj2p0"]
 
 [node name="PauseMenu" type="Control"]
 modulate = Color(1, 1, 1, 0)

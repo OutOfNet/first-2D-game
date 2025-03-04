@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpfiqx8b2mbx7"]
 
-[ext_resource type="Script" path="res://Scripts/UI/MainMenu/CreditsExit.gd" id="1_kpjf4"]
+[ext_resource type="Script" uid="uid://bcwiv0xdpo6hx" path="res://Scripts/UI/MainMenu/CreditsExit.gd" id="1_kpjf4"]
 [ext_resource type="FontFile" uid="uid://cxhm1llmyok6f" path="res://Fonts/m5x7.ttf" id="1_x3wcg"]
 
 [node name="Credits" type="Control"]
