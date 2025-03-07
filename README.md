@@ -1,7 +1,7 @@
 # first-2D-game
 Pretty self explanatory, made using godot 4.4 and some free to use assets, i don't really plan on publishing it for now, this is mostly to learn, however i could compile the game that i will publish here if anyone is curious to try it out.
 
-# Latest changes
+## Latest changes
 ### Stamina consumption rework
 Reworked the way stamina consumption works, instead of consuming 1 every 0.3 second, it consumes 0.1 every 0.03 second, which is less ressource-efficient, however it allows for a proper way to implement sprint interruption without needing too precise of a timing to interrupt it.
 ### Stamina recovery rework
