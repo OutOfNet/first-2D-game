@@ -22,36 +22,58 @@ var sprintDuration = 0
 
 @onready var pauseMenu = $"../UI/CanvasLayer/PauseMenu"
 
+func staminaRecovery() -> void:
+	# Handles stamina recovery
+	if stamina < maxStamina && isSprinting == false && recoveringStamina == false && pauseMenu.modulate.a == 0 && levelEnded == false:
+		recoveringStamina = true
+		await get_tree().create_timer(1.5).timeout
+		while stamina < maxStamina && isSprinting == false && levelEnded == false && pauseMenu.modulate.a == 0 && levelEnded == false:
+			stamina += maxStamina / 10
+			await get_tree().create_timer(.25).timeout
+			print("stamina = ", stamina)
+		print("stamina recovered fully! ready to sprint again!")
+		recoveringStamina = false
+	elif levelEnded == false:
+		await get_tree().create_timer(.05).timeout
+		staminaRecovery()
+
 func sprintInterrupt() -> void:
 	print("Sprinting stopped.")
 	sprintDuration = 0
 	speed = 700
 
-func _input(_event: InputEvent) -> void:
+func _input(_event) -> void:
 	
 	# Handles player sprint.
 	if Input.is_action_just_pressed("sprintInput") && stamina >= maxStamina * .3 && isSprinting == false && pauseMenu.modulate.a == 0:
 		isSprinting = true
-		await get_tree().create_timer(.05).timeout
+		await get_tree().create_timer(.005).timeout
 		$"../UI/Camera2D".cameraZoomModify()
 		speed = 900
 		while stamina > 0 && pauseMenu.modulate.a == 0:
-			sprintDuration += 1
+			sprintDuration += 2 * get_process_delta_time()
 			print("   Sprint duration : ", sprintDuration)
-			# Interrups sprint if the sprint input is pressed again (only problem is that it only works on the
-			# exact frame on which the stamina is consumed).
-			if Input.is_action_just_pressed("sprintInput") && pauseMenu.modulate.a == 0 && sprintDuration > 1 && speed == 900:
+			if Input.is_action_just_pressed("sprintInput") && pauseMenu.modulate.a == 0 && sprintDuration > 1 && speed == 900 && levelEnded == false:
 				sprintInterrupt()
+				await get_tree().create_timer(.005).timeout
 				$"../UI/Camera2D".cameraZoomModify()
+				stamina = floor(stamina)
+				await get_tree().create_timer(.05).timeout
 				break
-			stamina -= 1
+			stamina -= 0.1
 			print(stamina)
-			await get_tree().create_timer(.3).timeout
+			await get_tree().create_timer(.03).timeout
 		isSprinting = false
-		await get_tree().create_timer(.05).timeout
+		if stamina < 0:
+			stamina = 0
+		await get_tree().create_timer(.005).timeout
 		$"../UI/Camera2D".cameraZoomModify()
 		speed = 700
 		sprintDuration = 0
+		staminaRecovery()
+		await get_tree().create_timer(.05).timeout
+		if stamina > maxStamina:
+			stamina = maxStamina
 	
 	# Handles player jump.
 	if Input.is_action_just_pressed("jumpInput") && fallTime < .15 && hasJumped == false && levelEnded == false && diedRecently == false:
@@ -59,18 +81,6 @@ func _input(_event: InputEvent) -> void:
 		hasJumped = true
 
 func _physics_process(delta: float) -> void:
-	
-	# Handles stamina recovery
-	if stamina < maxStamina && isSprinting == false && recoveringStamina == false && pauseMenu.modulate.a == 0:
-		recoveringStamina = true
-		await get_tree().create_timer(1.5).timeout
-		while stamina < maxStamina && isSprinting == false && levelEnded == false && pauseMenu.modulate.a == 0:
-			stamina += maxStamina / 10
-			await get_tree().create_timer(.25).timeout
-			print("stamina = ", stamina)
-		print("stamina recovered fully! ready to sprint again!")
-		recoveringStamina = false
-	
 	
 	# If the player's health reaches 0 and the pause menu is closed then the player gets killed.
 	if health <= 0 && pauseMenu.modulate.a == 0:
