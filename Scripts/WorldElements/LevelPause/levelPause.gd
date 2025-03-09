@@ -12,6 +12,8 @@ func _process(_delta: float) -> void:
 		fruits.process_mode = Node.PROCESS_MODE_DISABLED
 		coins.process_mode = Node.PROCESS_MODE_DISABLED
 		checkpoints.process_mode = Node.PROCESS_MODE_DISABLED
+		pauseMenu.get_node(^"ResumeButton").set_default_cursor_shape(2)
+		pauseMenu.get_node(^"ExitButton").set_default_cursor_shape(2)
 		pauseMenu.modulate = Color(1, 1, 1, 1)
 		player.sprintDuration = 0
 		print("Game has been paused.")
@@ -20,6 +22,7 @@ func _process(_delta: float) -> void:
 		fruits.process_mode = Node.PROCESS_MODE_INHERIT
 		coins.process_mode = Node.PROCESS_MODE_INHERIT
 		checkpoints.process_mode = Node.PROCESS_MODE_INHERIT
-		pauseMenu.get_node(^"ResumeButton").set_cursor_shape(0)
+		pauseMenu.get_node(^"ResumeButton").set_default_cursor_shape(0)
+		pauseMenu.get_node(^"ExitButton").set_default_cursor_shape(0)
 		pauseMenu.modulate = Color(1, 1, 1, 0)
 		print("Game has been unpaused.")
