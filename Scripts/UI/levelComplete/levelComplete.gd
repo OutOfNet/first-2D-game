@@ -4,7 +4,7 @@ extends Label
 var levelEndAnimationPlaying = false
 
 func _ready() -> void:
-	position = Vector2(810, 450)
+	position = Vector2(405, 225)
 
 func _process(_delta: float) -> void:
 	if player.levelEnded == true && levelEndAnimationPlaying == false:

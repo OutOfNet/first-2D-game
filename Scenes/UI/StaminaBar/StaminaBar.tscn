@@ -94,7 +94,7 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 light_mask = 2
-scale = Vector2(30, 30)
+scale = Vector2(22, 22)
 sprite_frames = SubResource("SpriteFrames_gsrjm")
 animation = &"StaminaBar"
 frame_progress = 1.0

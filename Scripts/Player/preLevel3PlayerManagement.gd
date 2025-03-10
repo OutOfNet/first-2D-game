@@ -50,7 +50,7 @@ func _input(_event) -> void:
 		await get_tree().create_timer(.005).timeout
 		$"../UI/Camera2D".cameraZoomModify()
 		speed = 900
-		while stamina > 0 && pauseMenu.modulate.a == 0:
+		while stamina > 0 && pauseMenu.modulate.a == 0 && levelEnded == false:
 			sprintDuration += 2 * get_process_delta_time()
 			print("   Sprint duration : ", sprintDuration)
 			if Input.is_action_just_pressed("sprintInput") && pauseMenu.modulate.a == 0 && sprintDuration > 1 && speed == 900 && levelEnded == false:

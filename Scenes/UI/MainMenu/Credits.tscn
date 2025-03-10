@@ -18,10 +18,18 @@ position = Vector2(574, 323)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 396.0
-offset_top = 50.0
-offset_right = 1546.0
-offset_bottom = 997.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.0
+offset_top = -249.0
+offset_right = 770.0
+offset_bottom = 698.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("1_x3wcg")
 theme_override_font_sizes/font_size = 58
 text = "Sprites : 

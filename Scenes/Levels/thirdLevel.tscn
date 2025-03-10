@@ -455,7 +455,7 @@ offset_bottom = 40.0
 [node name="CoinCounter" parent="UI/CanvasLayer" instance=ExtResource("10_eefk6")]
 
 [node name="coinCounterIcon" type="AnimatedSprite2D" parent="UI/CanvasLayer"]
-scale = Vector2(8, 8)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_q1e1o")
 animation = &"Coin"
 autoplay = "Coin"
@@ -465,7 +465,7 @@ script = ExtResource("12_mi2vn")
 offset_bottom = 107.0
 
 [node name="fruitCounterIcon" type="AnimatedSprite2D" parent="UI/CanvasLayer"]
-scale = Vector2(7, 7)
+scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_7rsd4")
 animation = &"fruitCounter"
 autoplay = "fruitCounter"
@@ -489,16 +489,16 @@ horizontal_alignment = 1
 script = ExtResource("18_tj0o6")
 
 [node name="PauseMenu" parent="UI/CanvasLayer" instance=ExtResource("19_pkguw")]
-offset_left = 400.0
-offset_top = 246.0
-offset_right = 400.0
-offset_bottom = 246.0
+offset_left = 295.0
+offset_top = 150.0
+offset_right = 295.0
+offset_bottom = 150.0
 
 [node name="Camera2D" type="Camera2D" parent="UI"]
 position = Vector2(-194, -69)
 offset = Vector2(200, -150)
 ignore_rotation = false
-zoom = Vector2(1.15, 1.15)
+zoom = Vector2(0.6, 0.6)
 limit_bottom = 750
 limit_smoothed = true
 position_smoothing_enabled = true
